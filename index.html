@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+
+</head>
+<body>
+  
+  <div class="uk-position-fixed uk-position-center-left uk-padding-small uk-visible@m">
+    <button class="uk-button uk-button-link" type="button" uk-toggle="target: #offcanvas-nav-primary"><span class="uk-animation-slide-left" uk-icon="icon: chevron-double-right; ratio: 2" style="color:whitesmoke"></span></button>
+  </div>
+
+  <div class="uk-position-fixed uk-position-top-right uk-padding-small uk-hidden@m">
+    <button class="uk-button uk-button-link" type="button" uk-toggle="target: #offcanvas-nav-primary"><span class="uk-animation-slide-left" uk-icon="icon: menu; ratio: 2" style="color:whitesmoke"></span></button>
+  </div>
+
+  <!-- Off-Canvas Navbar -->
+  <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+      <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
+      <ul class="uk-nav uk-nav-primary uk-margin-medium-left uk-margin-auto-vertical" uk-scrollspy-nav="scroll: true;">
+        <li class="uk-button-text"><a href="#section1">About</a></li>
+        <li class="uk-button-text"><a href="#section2">Experience</a></li>
+        <li class="uk-button-text"><a href="#section3">Projects</a></li>
+        <li class="uk-button-text"><a href="#section4">Certifications</a></li>
+        <li class="uk-button-text"><a href="#section5">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sections -->
+  <div id="section1" class="uk-section uk-section-primary uk-background-cover" uk-height-viewport="offset-top: true" style="background-image: url(./bg1.png);">
+    <div class="uk-child-width-expand@m uk-padding-large uk-grid-divider" uk-grid>
+      <div class="uk-animation-fade">
+          <h1>Welcome to my website<h1>
+          <h4>GPT generating the response </h4>
+       </div>
+      <div>
+          <h2 id="typed-text"></h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="section2" class="uk-section uk-section-secondary" uk-height-viewport="offset-top: true">
+    <div class="uk-child-width-expand@m uk-padding-large" uk-grid>
+      <div>
+          <h1>Welcome to my website</h1>
+       </div>
+      <div>
+          <h3>Heading</h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="section3" class="uk-section uk-section-default uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="offset-top: true">
+    <h1>Projects</h1>
+  </div>
+
+  <div id="section4" class="uk-section uk-section-primary uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="offset-top: true">
+    <h1>Certifications</h1>
+  </div>
+
+  <div id="section5" class="uk-section uk-section-secondary uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="offset-top: true">
+    <h1>Contact</h1>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var typed = new Typed('#typed-text', {
+        strings: ["I'm Aaditya Gurav, a passionate software developer with a knack for solving complex problems and creating innovative solutions. Explore my journey, projects, and insights as I delve into the world of backend development, data pipelines, and AI. Scroll down to learn more about me and my work..."],
+        typeSpeed: 75,
+        backSpeed: 25,
+        startDelay: 500,
+        backDelay: 5000,
+        loop: false,
+        onComplete: function() {
+          typed.cursor.remove(); // Remove the cursor when typing is done
+        }
+      });
+
+      // Use Intersection Observer to trigger the typing animation when the section is in view
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            typed.start();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(document.querySelector('#section1'));
+    });
+  </script>
+
+</body>
+</html>
+
+
+
