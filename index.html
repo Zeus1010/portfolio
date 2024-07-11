@@ -18,6 +18,7 @@
 
 <body>
   
+  <!--Stationary icons-->
   <div class="uk-position-fixed uk-position-center-left uk-padding-small uk-visible@m uk-position-z-index">
     <button class="uk-button uk-button-link" type="button" uk-toggle="target: #offcanvas-nav-primary"><span class="uk-animation-slide-right" uk-icon="icon: chevron-double-right; ratio: 2" style="color:black"></span></button>
   </div>
@@ -30,6 +31,16 @@
     <button class="uk-button uk-button-link" type="button" uk-toggle="target: #offcanvas-nav-primary"><span class="uk-animation-slide-bottom" uk-icon="icon: chevron-down; ratio: 2" style="color:black"></span></button>
   </div>
 
+  <!--Contact details-->
+  <div class="uk-margin-small-bottom uk-margin-small-left uk-padding-small uk-position-fixed uk-position-bottom-left uk-overlay uk-background-secondary uk-position-z-index uk-border-pill">
+    <ul class="uk-iconnav uk-iconnav-vertical">
+      <li><a href="./resume.pdf" uk-icon="icon: download" style="color:white" uk-tooltip="title: Resume ; pos: right"></a></li>
+      <li><a href="https://github.com/aaditya-gurav" uk-icon="icon: github-alt;" style="color:white" uk-tooltip="title: GitHub; pos: right"></a></li>
+      <li><a href="https://www.linkedin.com/in/aadityagurav" uk-icon="icon: linkedin" style="color:white" uk-tooltip="title: LinkedIn; pos: right"></a></li>
+      <li><a href="mailto:aaditya.gurav01@gmail.com" uk-icon="icon: google" style="color:white" uk-tooltip="title: Mail; pos: right"></a></li>
+    </ul>
+  </div>
+
   <!-- Off-Canvas Navbar -->
   <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar uk-flex uk-flex-column">
@@ -39,18 +50,21 @@
         <li class="uk-button-text"><a href="#section2">Experience</a></li>
         <li class="uk-button-text"><a href="#section3">Projects</a></li>
         <li class="uk-button-text"><a href="#section4">Certifications</a></li>
-        <li class="uk-button-text"><a href="#section5">Contact</a></li>
       </ul>
     </div>
   </div>
 
   <!-- Sections -->
+
   <!-- About -->
   <div id="section1" class="uk-section" uk-height-viewport="offset-top: true">
       <div class="uk-child-width-expand@m uk-padding-large uk-grid-divider" uk-grid>
         <div class="uk-animation-fade">
             <h1>Welcome to my website<h1>
             <h4>GPT generating the response </h4>
+            <a class="uk-card uk-card-secondary uk-card-body uk-border-pill uk-text-center" href="./resume.pdf">
+              <h1 class="uk-heading-small">Download Resume <span uk-icon="icon: download; ratio: 2.5"></span> </h1>
+            </a>
          </div>
         <div>
           <h3 id="typed-text"></h3>
@@ -95,7 +109,7 @@
                     <div>
                       <h2 class="uk-modal-title">TruWeather Solutions</h2>
                     </div>
-                    <div><a class="uk-margin-small-top" href="https://truweathersolutions.com" uk-icon="icon: world; ratio: 1.25"></a></div>
+                    <div><a class="uk-margin-small-top" href="https://truweathersolutions.com" uk-icon="icon: link-external; ratio: 1.25"></a></div>
                   </div>
                   <p class="uk-article-meta">December 2021 - Present</p>
                   <p class="uk-text-lead">Software Developer</p>
@@ -157,7 +171,7 @@
                     <div>
                       <h2 class="uk-modal-title">Quickwork</h2>
                     </div>
-                    <div><a class="uk-margin-small-top" href="https://www.quickwork.co/" uk-icon="icon: world; ratio: 1.25"></a></div>
+                    <div><a class="uk-margin-small-top" href="https://www.quickwork.co/" uk-icon="icon: link-external; ratio: 1.25"></a></div>
                   </div>
                   <p class="uk-article-meta">November 2020 - July 2021</p>
                   <p class="uk-text-lead">Software Developer Intern</p>
@@ -205,7 +219,7 @@
                     <div>
                       <h2 class="uk-modal-title">Reliance Industries</h2>
                     </div>
-                    <div><a class="uk-margin-small-top" href="https://www.ril.com/" uk-icon="icon: world; ratio: 1.25"></a></div>
+                    <div><a class="uk-margin-small-top" href="https://www.ril.com/" uk-icon="icon: link-external; ratio: 1.25"></a></div>
                   </div>
                   <p class="uk-article-meta">June 2019 - July 2019</p>
                   <p class="uk-text-lead">Data Analyst Intern</p>
@@ -253,7 +267,7 @@
                     <div>
                       <h2 class="uk-modal-title">Larsen & Toubro Infotech</h2>
                     </div>
-                    <div><a class="uk-margin-small-top" href="https://www.ltimindtree.com/" uk-icon="icon: world; ratio: 1.25"></a></div>
+                    <div><a class="uk-margin-small-top" href="https://www.ltimindtree.com/" uk-icon="icon: link-external; ratio: 1.25"></a></div>
                   </div>
                   <p class="uk-article-meta">December 2018 - January 2019</p>
                   <p class="uk-text-lead">Student Intern</p>
@@ -276,22 +290,23 @@
       </div>
     </div>
   </div>
-
   <hr class="uk-divider-icon">
 
+  <!--Projects-->
   <div id="section3" class="uk-section uk-section-default" uk-height-viewport="offset-top: true">
     <div class="uk-child-width-expand@m uk-padding-large uk-grid-divider" uk-grid>
-      <div class="uk-animation-fade">
-          <h1>Projects<h1>
-          <h4>GPT generating the response </h4>
-       </div>
-      <div>
-        <h1>hello</h1>
-      </div>
+        <div class="uk-animation-fade">
+            <h1>Projects<h1>
+            <h4>GPT generating the response </h4>
+        </div>
+        <div>
+          <h2>Coming Soon...</h2>
+        </div>
+    </div>
   </div>
-
   <hr class="uk-divider-icon">
 
+  <!--Certifications-->
   <div id="section4" class="uk-section uk-section-default" uk-height-viewport="offset-top: true">
     <div class="uk-child-width-expand@m uk-padding-large uk-grid-divider" uk-grid>
       <div class="uk-animation-fade">
@@ -299,21 +314,7 @@
           <h4>GPT generating the response </h4>
        </div>
       <div>
-          <h2 id="typed-text3"></h2>
-      </div>
-    </div>
-  </div>
-
-  <hr class="uk-divider-icon">
-
-  <div id="section5" class="uk-section uk-section-default" uk-height-viewport="offset-top: true">
-    <div class="uk-child-width-expand@m uk-padding-large uk-grid-divider" uk-grid>
-      <div class="uk-animation-fade">
-          <h1>Contact<h1>
-          <h4>GPT generating the response </h4>
-       </div>
-      <div>
-          <h2 id="typed-text4"></h2>
+        <h2>Coming Soon...</h2>
       </div>
     </div>
   </div>
