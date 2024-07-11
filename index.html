@@ -15,15 +15,10 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
 
 </head>
-<style>
-  .scrollable-content {
-    overflow-y: auto;
-    max-height: 100vh; /* Ensure it doesn't overflow the viewport */
-  }
-</style>
+
 <body>
   
-  <div class="uk-position-fixed uk-position-center-left uk-padding-small uk-visible@m">
+  <div class="uk-position-fixed uk-position-center-left uk-padding-small uk-visible@m uk-position-z-index">
     <button class="uk-button uk-button-link" type="button" uk-toggle="target: #offcanvas-nav-primary"><span class="uk-animation-slide-right" uk-icon="icon: chevron-double-right; ratio: 2" style="color:black"></span></button>
   </div>
 
@@ -50,7 +45,8 @@
   </div>
 
   <!-- Sections -->
-  <div id="section1" class="uk-section uk-section-default" uk-height-viewport="offset-top: true">
+  <!-- About -->
+  <div id="section1" class="uk-section" uk-height-viewport="offset-top: true">
       <div class="uk-child-width-expand@m uk-padding-large uk-grid-divider" uk-grid>
         <div class="uk-animation-fade">
             <h1>Welcome to my website<h1>
@@ -61,19 +57,19 @@
         </div>
       </div>
   </div>
-
   <hr class="uk-divider-icon">
 
-  <div id="section2" class="uk-section uk-section-default" uk-scrollspy="cls: uk-animation-fade; repeat: true" uk-height-viewport="offset-top: true">
+  <!-- Experience -->
+  <div id="section2" class="uk-section uk-section-default" uk-height-viewport="offset-top: true">
     <div class="uk-child-width-expand@m uk-padding-large uk-grid-divider" uk-grid>
-      <div >
+      <div>
           <h1>Experience<h1>
           <h4>Experience fosters expertise</h4>
-       </div>
+      </div>
       <div>
-        <ul class="uk-list uk-list-divider">
+        <ul class="uk-list">
           <li>
-            <article class="uk-article">
+            <div class="uk-card uk-card-default uk-card-body uk-card-hover" uk-toggle="target: #tws-modal" type="button">
               <h2>TruWeather Solutions</h2>          
               <p class="uk-article-meta">December 2021 - Present</p>
               <p class="uk-text-lead">Software Developer</p>
@@ -87,25 +83,104 @@
                     <a class="uk-button uk-button-text" href="#">Read more</a> <span uk-icon="icon: chevron-right; ratio: 0.75" style="color:black">
                   </div>
               </div>
-            </article>
+            </div>
+            <!--TWS-Modal-->
+            <div id="tws-modal" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body" uk-overflow-auto>
+                  <button class="uk-modal-close-default" type="button" uk-close></button>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <h2 class="uk-modal-title">TruWeather Solutions</h2>
+                    </div>
+                    <div><a class="uk-margin-small-top" href="https://truweathersolutions.com" uk-icon="icon: world; ratio: 1.25"></a></div>
+                  </div>
+                  <p class="uk-article-meta">December 2021 - Present</p>
+                  <p class="uk-text-lead">Software Developer</p>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <span class="uk-badge" style="background-color: black;">SQL</span>
+                      <span class="uk-badge" style="background-color: black;">MongoDB</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-Lambda</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-S3</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-DynamoDB</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-EC2</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-ECS</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-Farate</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-Redis</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-SNS</span>
+                      <span class="uk-badge" style="background-color: black;">AWS-SQS</span>
+                      <span class="uk-badge" style="background-color: black;">Node</span>
+                      <span class="uk-badge" style="background-color: black;">React</span>
+                      <span class="uk-badge" style="background-color: black;">MQTT</span>
+                      <span class="uk-badge" style="background-color: black;">REST</span>
+                      <span class="uk-badge" style="background-color: black;">Modbus</span>
+                      <span class="uk-badge" style="background-color: black;">System Desing</span>
+                      <span class="uk-badge" style="background-color: black;">Data Pipeline</span>
+                    </div>
+                  </div>
+                  <hr>
+                  <ul class="uk-list uk-list-disc uk-list-emphasis">
+                    <li>Established data pipeline in AWS by leveraging technologies such as Lambda, SQS and S3 to process and archive data, alongside publishing it on an MQTT server and enabling user access through a Node based REST API for swift data retrieval.</li>
+                    <li>Reduced AWS monthly expenses by $3,000 through right-sizing instances, leveraging Reserved Instances, implementing Auto Scaling, and optimizing storage and idle resources.</li>
+                    <li>Conducted a comprehensive overhaul of TWS’s workbook using ReactJS to enhance user experience and performance.</li>
+                    <li>Integrated more than10 weather sensors using various techniques and protocols such as REST API's, Modbus and by directly interfacing with them via cloud. Processed the data using AWS tools like Kinesis and Lambda, storage using DynamoDB and S3.</li>
+                    <li>Developed an alerting system to notify clients about specific weather events in designated regions. Implemented the system using SailsJS and utilized RabbitMQ for event management.</li>
+                    <li>Designed a Server Sent Events (SSE) interface which helped clients for rapid data retrieval through REST API and web sockets.
+                      Reengineered the next version of the system architecture with enhanced security standards and improvements in database structure, fault tolerance, data retrieval, storage, and performance.
+                    </li>
+                  </ul>
+              </div>
+            </div>
           </li>
           <li>
-            <article class="uk-article">
+            <div class="uk-card uk-card-default uk-card-body uk-card-hover" uk-toggle="target: #qwk-modal" type="button">
               <h2>Quickwork</h2>          
               <p class="uk-article-meta">November 2020 - July 2021</p>
               <p class="uk-text-lead">Software Developer Intern</p>
               <div class="uk-grid-small uk-child-width-auto" uk-grid>
                 <div>
-                  <span class="uk-badge" style="background-color: black;">Angular</span>
+                  <span class="uk-badge" style="background-color: black;">React</span>
                   <span class="uk-badge" style="background-color: black;">Node</span>
                   <span class="uk-badge" style="background-color: black;">REST</span>
                   <a class="uk-button uk-button-text" href="#">Read more</a> <span uk-icon="icon: chevron-right; ratio: 0.75" style="color:black">
                   </div>
               </div>
-            </article>
+            </div>
+            <!--Quickwork Modal-->
+            <div id="qwk-modal" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body" uk-overflow-auto>
+                  <button class="uk-modal-close-default" type="button" uk-close></button>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <h2 class="uk-modal-title">Quickwork</h2>
+                    </div>
+                    <div><a class="uk-margin-small-top" href="https://www.quickwork.co/" uk-icon="icon: world; ratio: 1.25"></a></div>
+                  </div>
+                  <p class="uk-article-meta">November 2020 - July 2021</p>
+                  <p class="uk-text-lead">Software Developer Intern</p>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <span class="uk-badge" style="background-color: black;">React</span>
+                      <span class="uk-badge" style="background-color: black;">Node</span>
+                      <span class="uk-badge" style="background-color: black;">REST API</span>
+                      <span class="uk-badge" style="background-color: black;">Integration</span>
+                      <span class="uk-badge" style="background-color: black;">WorkflowAutomation</span>
+                      <span class="uk-badge" style="background-color: black;">FrontEndDevelopment</span>
+                      <span class="uk-badge" style="background-color: black;">User Experience</span>
+
+                    </div>
+                  </div>
+                  <hr>
+                  <ul class="uk-list uk-list-disc uk-list-emphasis">
+                    <li>Successfully developed over 100 client-specific connectors for workflow automation using REST APIs and collaborated with the front-end development team to create web pages, leveraging technologies like React and NodeJS to ensure smooth user experiences.</li>
+                    <li>Experienced developer with a track record of creating over 100 client-specific connectors for seamless workflow automation. Leveraged REST APIs from platforms like Dialogflow, Facebook ads, and YouTube to empower users to effortlessly integrate these services into their existing systems.</li>
+                    <li>Worked closely with the front-end development team, utilizing React and Node.js, to build web pages and address any associated challenges. #Integration #APIs #WorkflowAutomation #FrontEndDevelopment</li>
+                  </ul>
+              </div>
+            </div>
           </li>
           <li>
-            <article class="uk-article">
+            <div class="uk-card uk-card-default uk-card-body uk-card-hover" uk-toggle="target: #reli-modal" type="button">
               <h2>Reliance Industries</h2>          
               <p class="uk-article-meta">June 2019 - July 2019</p>
               <p class="uk-text-lead">Data Analyst Intern</p>
@@ -118,10 +193,42 @@
                   <a class="uk-button uk-button-text" href="#">Read more</a> <span uk-icon="icon: chevron-right; ratio: 0.75" style="color:black">
                   </div>
               </div>
-            </article>
+            </div>
+            <!--Reliance Modal-->
+            <div id="reli-modal" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body" uk-overflow-auto>
+                  <button class="uk-modal-close-default" type="button" uk-close></button>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <h2 class="uk-modal-title">Reliance Industries</h2>
+                    </div>
+                    <div><a class="uk-margin-small-top" href="https://www.ril.com/" uk-icon="icon: world; ratio: 1.25"></a></div>
+                  </div>
+                  <p class="uk-article-meta">June 2019 - July 2019</p>
+                  <p class="uk-text-lead">Data Analyst Intern</p>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <span class="uk-badge" style="background-color: black;">Tableau</span>
+                      <span class="uk-badge" style="background-color: black;">Python</span>
+                      <span class="uk-badge" style="background-color: black;">AI/ML</span>
+                      <span class="uk-badge" style="background-color: black;">Tensorflow</span>
+                      <span class="uk-badge" style="background-color: black;">SVR</span>
+                      <span class="uk-badge" style="background-color: black;">SVM</span>
+                      <span class="uk-badge" style="background-color: black;">Data Visualization</span>
+                      <span class="uk-badge" style="background-color: black;">DecisionMaking</span>
+                    </div>
+                  </div>
+                  <hr>
+                  <ul class="uk-list uk-list-disc uk-list-emphasis">
+                    <li>Designed a machine learning model for real-time Gas to Water Ratio estimation in oilfields, leveraging data on Humidity, Depth, and Soil Content, using SVM, SVR, and TensorFlow, achieving an 88% accuracy; also generated data visualization reports using Tableau for oilfield trend analysis, supporting strategic drilling location decisions.</li>
+                    <li>Additionally, contributed to data-driven decision-making in the oil industry by creating multiple Data Visualization reports using Tableau.</li>
+                    <li>These reports showcased trends in oil fields across the Gujarat region, aiding in informed decisions about drilling locations.</li>
+                  </ul>
+              </div>
+            </div>
           </li>
           <li>
-            <article class="uk-article">
+            <div class="uk-card uk-card-default uk-card-body uk-card-hover" uk-toggle="target: #lnt-modal" type="button">
               <h2>Larsen & Toubro Infotech</h2>          
               <p class="uk-article-meta">December 2018 - January 2019</p>
               <p class="uk-text-lead">Student Intern</p>
@@ -132,9 +239,35 @@
                   <span class="uk-badge" style="background-color: black;">JavaScript</span>
                   <span class="uk-badge" style="background-color: black;">Bootstrap</span>
                   <a class="uk-button uk-button-text" href="#">Read more</a> <span uk-icon="icon: chevron-right; ratio: 0.75" style="color:black">
-                  </div>
+                </div>
+              </div>
             </div>
-            </article>
+            <!--Lnt Modal-->
+            <div id="lnt-modal" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body" uk-overflow-auto>
+                  <button class="uk-modal-close-default" type="button" uk-close></button>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <h2 class="uk-modal-title">Larsen & Toubro Infotech</h2>
+                    </div>
+                    <div><a class="uk-margin-small-top" href="https://www.ltimindtree.com/" uk-icon="icon: world; ratio: 1.25"></a></div>
+                  </div>
+                  <p class="uk-article-meta">December 2018 - January 2019</p>
+                  <p class="uk-text-lead">Student Intern</p>
+                  <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                    <div>
+                      <span class="uk-badge" style="background-color: black;">HTML</span>
+                      <span class="uk-badge" style="background-color: black;">CSS</span>
+                      <span class="uk-badge" style="background-color: black;">JavaScript</span>
+                      <span class="uk-badge" style="background-color: black;">Bootstrap</span>
+                      <span class="uk-badge" style="background-color: black;">JQuery</span>
+                      <span class="uk-badge" style="background-color: black;">PHP</span>
+                      <span class="uk-badge" style="background-color: black;">SQL</span>
+                    </div>
+                  </div>
+                  <hr>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -150,9 +283,8 @@
           <h4>GPT generating the response </h4>
        </div>
       <div>
-          <h2></h2>
+        <h1>hello</h1>
       </div>
-    </div>
   </div>
 
   <hr class="uk-divider-icon">
@@ -186,7 +318,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var typed = new Typed('#typed-text', {
-        strings: ["I'm Aaditya Gurav, a passionate software developer with a knack for solving complex problems and creating innovative solutions. Explore my journey, projects, and insights as I delve into the world of backend development, data pipelines, and AI. Scroll down to learn more about me and my work..."],
+        strings: ["I'm Aaditya Gurav, a software developer based in New York, currently working at TruWeatherSolutions. I hold a Master of Science in Computer Science from Syracuse University and a Bachelor of Engineering in Computer Engineering from Mumbai University. Over the years, I've developed a strong foundation in various programming languages, including C++, Python, JavaScript, Kotlin, and Swift. My technical stack is diverse, encompassing tools and technologies like NodeJS, ReactJS, AWS services (EC2, S3, DynamoDB, Lambda, Kinesis, RDS, Elastic Beanstalk, API Gateway), Firebase, MongoDB, Android Studio, XCode, Anaconda, Jupyter Notebook, VSCode, Docker, Jenkins, and Gitlab."],
         typeSpeed: 10,
         loop: false,
         onComplete: function() {
